@@ -1,0 +1,63 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
+}
+body {
+	text-align: center;
+	background-color: $back;
+}
+header {
+	margin-top: 150px;
+	margin-bottom: 100px;
+	color: $green;
+
+	h1 {
+		font-size: 50px;
+	}
+}
+
+#filters {
+	max-width: 800px;
+	margin: auto;
+
+	input,
+	button {
+		margin-bottom: 30px;
+		font-size: 17px;
+		width: 80%;
+	}
+	input[type="text"] {
+		background-color: $back;
+		border: 0;
+		border-bottom: 1px solid;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+.btn,
+.btn:focus {
+	color: $back;
+	background-color: $green;
+	padding: 15px;
+	font-size: 20px;
+}
+.btn:hover,
+.btn:hover:focus {
+	color: $green;
+	border: 1px solid $green;
+	background-color: $back;
+}
+.btn.active.focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn:active:focus,.btn:focus {
+	outline: none;
+}
+.btn:active {
+	box-shadow: none;
+}
+
+#return_flight p {
+	font-size: 25px;
+	margin: 30px 0;
+	color: $green;
+}

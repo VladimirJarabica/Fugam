@@ -1,0 +1,16 @@
+$green: #a0ce4e;
+$back: #fbfbfb;
+$shadow: #B5B5B5;
+
+$filter-offset: 400px;
+
+
+.row {
+	margin-right: 0px;
+	margin-left: 0px;
+}
+
+
+@import './bootstrapXL.scss';
+@import './index.scss';
+@import './detail.scss';

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fugam Welcome</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<link href='https://fonts.googleapis.com/css?family=Raleway&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="./dist/main.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Fugam</h1>
+	</header>
+	<main>
+		<form id="filters">
+			<div id="directflight_filters" class="clearfix">
+				<div class="col col-sm-6 col-xs-12"><input type="text" name="departure" placeholder="Departure" /></div>
+				<div class="col col-sm-6 col-xs-12"><input type="text" name="arrival" placeholder="Arrival" /></div>
+				<div class="col col-sm-6 col-xs-12"><input type="text" name="date_from" placeholder="Date from" /></div>
+				<div class="col col-sm-6 col-xs-12"><input type="text" name="date_to" placeholder="Date to"></div>
+			</div>
+			<div id="add_return_wrapper">
+				<div class="col col-sm-6 col-xs-12"><button type="button" class="btn" id="add_return_button">Add return flight</button></div>
+			</div>
+			<div id="return_flight" style="display: none;" class="clearfix">
+				<p>Return flight</p>
+				<div class="col col-sm-6 col-xs-12"><input type="text" name="return_date_from" placeholder="Date from" /></div>
+				<div class="col col-sm-6 col-xs-12"><input type="text" name="return_date_to" placeholder="Date to"></div>
+			</div>
+			<div id="remove_return_wrapper" style="display: none;">
+				<div class="col col-sm-6 col-xs-12"><button type="button" class="btn" id="remove_return_button">Only direct flight</button></div>
+			</div>
+			<div id="search_wrapper">
+				<div class="col col-sm-6 col-xs-12"><input type="submit" class="btn" name="submit" value="Search!" /></div>
+			</div>
+		</form>
+			
+	</main>
+	<script>
+		$(function() {
+			$('#filters').submit(function(e) {
+				console.log('submited');
+				window.location.href = 'detail.html';
+				e.preventDefault();
+			});
+
+
+			$('#add_return_button').click(function(e) {
+				$('#return_flight, #remove_return_wrapper').show();
+				$('#add_return_wrapper').hide();
+				return;
+			});
+			$('#remove_return_button').click(function(e) {
+				$('#return_flight, #remove_return_wrapper').hide();
+				$('#add_return_wrapper').show();
+				return;
+			});
+		});
+	</script>
+</body>
+</html>
