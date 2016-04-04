@@ -1,0 +1,124 @@
+body.detail {
+	background-color: $green;
+}
+main#detail {
+	&.filter_closed {
+		#left {
+			left: -$filter-offset;
+		}
+		#center {
+			margin-left: 0;
+		}
+	}
+
+
+	#left {
+		box-shadow: 0px 0px 4px 1px $shadow;
+		background-color: $back;
+		position: fixed;
+		min-width: $filter-offset;
+		width: $filter-offset;
+		height: 100%;
+		border-right: 1px solid $green;
+		overflow-y: auto;
+
+		header {
+			margin-top: 50px;
+		}
+	}
+
+	#center {
+		text-align: left;
+		margin-left: $filter-offset;
+
+		#sort_bar {
+			font-size: 15px;
+			box-shadow: 0px 0px 4px 1px $shadow;
+			background-color: $back;
+			margin-left: 5px;
+			width: calc(100% - 5px);
+			padding: 15px 30px;
+
+			.sort_item {
+				min-width: 10%;
+				display: block;
+				float: left;
+			}
+			span.sort_item {
+				line-height: 34px;
+				font-size: 20px;
+				font-weight: bold;
+				color: $green;
+			}
+
+			#sort_list {
+				.sort_item {
+					min-width: auto;
+					button.btn {
+						padding: 5px 15px;
+						font-size: 16px;
+						min-width: auto;
+						margin-right: 10px;
+						//width: 110px;
+					}
+				}
+			}
+		}
+
+		ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		li.result {
+			padding: 5px;
+			transition: all .15s;
+			>div.result_wrapper {
+				//height: 117px;
+				height: auto;
+				overflow: hidden;
+				box-shadow: 0px 0px 4px 1px $shadow;
+				background-color: $back;
+				.row {
+					margin-top: 20px;
+					margin-bottom: 20px;
+				}
+
+				.result_seg {
+					.route_detail {
+						span.from {
+							font-size: 14px;
+						}
+						span.to {
+							font-size: 18px;
+						}
+					}
+					.route_price {
+						span.price {
+							font-size: 18px;
+							font-weight: bold;
+						}
+					}
+				}
+
+				.route_add_info {
+					margin-top: 40px;
+				}
+				.dest_from_to_row {
+					.dotts {
+						padding-left: 20px;
+					}
+				}
+
+				.result_add {
+					border-top: 1px solid $green;
+					position: absolute;
+					background-color: $back;
+					width: calc(100% - 10px);
+					z-index: 1;
+				}
+			}
+		}
+	}
+}
