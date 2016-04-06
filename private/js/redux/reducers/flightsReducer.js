@@ -1,14 +1,19 @@
 export default (flights = {
-		query: '',
-		data: []
+		flights: { data: [],
+		filters: {}},
 	}, action) => {
+	let newFlights = {};
 	switch(action.type) {
 		case 'RECEIVE_FLIGHTS':
-			let newFlights = {}
+			console.log('RECEIVE_FLIGHTS')
 			newFlights.data = action.flights
-			newFlights.query = action.query
+			newFlights.filters = action.filters
 			return newFlights
 		break
+		case 'ADD_FILTER':
+			newFlights = Object.assign({}, flights)
+			newFlights.filters[action.filter.type] = action.filter.value
+			return newFlights
 		default:
 			return flights
 	}

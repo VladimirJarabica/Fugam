@@ -7,15 +7,9 @@ import configureStore from './redux/store'
 import { Provider } from 'react-redux'
 
 let initialState = {
-	places: {
-		query: '',
-		data: []
-	},
-	flights: {
-		query: '',
-		data: []
-	},
-	loading: true
+	places: [],
+	flights: { data: [], filters: {}},
+	loading: false
 }
 
 let store = configureStore(initialState)

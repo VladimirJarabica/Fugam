@@ -44,7 +44,7 @@ class Results extends Component {
     let self = this
     return (
       <section id="center" className="clearfix">
-        <Sortbar loadMore={this.loadMore} />
+        <Sortbar actions={this.props.actions} filters={this.props.filters} loadMore={this.loadMore} />
         <ul id="results_list">
         {
           self.props.flights.slice(0, self.state.limit).map((flight) => {

@@ -58,7 +58,7 @@
 
 	var _App2 = _interopRequireDefault(_App);
 
-	var _store = __webpack_require__(196);
+	var _store = __webpack_require__(199);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -67,15 +67,9 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var initialState = {
-		places: {
-			query: '',
-			data: []
-		},
-		flights: {
-			query: '',
-			data: []
-		},
-		loading: true
+		places: [],
+		flights: { data: [], filters: {} },
+		loading: false
 	};
 
 	var store = (0, _store2.default)(initialState);
@@ -121,7 +115,7 @@
 
 
 	// module
-	exports.push([module.id, ".row {\n  margin-right: 0px;\n  margin-left: 0px; }\n\n/*\r\n*   CSS file with Bootstrap grid classes for screens bigger than 1600px. Just add this file after the Bootstrap CSS file and you will be able to juse col-xl, col-xl-push, hidden-xl, etc.\r\n*\r\n*   Author: Marc van Nieuwenhuijzen\r\n*   Company: WebVakman\r\n*   Site: WebVakman.nl\r\n*\r\n*/\n@media (min-width: 1200px) and (max-width: 1599px) {\n  .hidden-lg {\n    display: none !important; } }\n\n.visible-xl-block,\n.visible-xl-inline,\n.visible-xl-inline-block,\n.visible-xl {\n  display: none !important; }\n\n@media (min-width: 1600px) {\n  .container {\n    width: 1570px; }\n  .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {\n    float: left; }\n  .col-xl-12 {\n    width: 100%; }\n  .col-xl-11 {\n    width: 91.66666667%; }\n  .col-xl-10 {\n    width: 83.33333333%; }\n  .col-xl-9 {\n    width: 75%; }\n  .col-xl-8 {\n    width: 66.66666667%; }\n  .col-xl-7 {\n    width: 58.33333333%; }\n  .col-xl-6 {\n    width: 50%; }\n  .col-xl-5 {\n    width: 41.66666667%; }\n  .col-xl-4 {\n    width: 33.33333333%; }\n  .col-xl-3 {\n    width: 25%; }\n  .col-xl-2 {\n    width: 16.66666667%; }\n  .col-xl-1 {\n    width: 8.33333333%; }\n  .col-xl-pull-12 {\n    right: 100%; }\n  .col-xl-pull-11 {\n    right: 91.66666667%; }\n  .col-xl-pull-10 {\n    right: 83.33333333%; }\n  .col-xl-pull-9 {\n    right: 75%; }\n  .col-xl-pull-8 {\n    right: 66.66666667%; }\n  .col-xl-pull-7 {\n    right: 58.33333333%; }\n  .col-xl-pull-6 {\n    right: 50%; }\n  .col-xl-pull-5 {\n    right: 41.66666667%; }\n  .col-xl-pull-4 {\n    right: 33.33333333%; }\n  .col-xl-pull-3 {\n    right: 25%; }\n  .col-xl-pull-2 {\n    right: 16.66666667%; }\n  .col-xl-pull-1 {\n    right: 8.33333333%; }\n  .col-xl-pull-0 {\n    right: auto; }\n  .col-xl-push-12 {\n    left: 100%; }\n  .col-xl-push-11 {\n    left: 91.66666667%; }\n  .col-xl-push-10 {\n    left: 83.33333333%; }\n  .col-xl-push-9 {\n    left: 75%; }\n  .col-xl-push-8 {\n    left: 66.66666667%; }\n  .col-xl-push-7 {\n    left: 58.33333333%; }\n  .col-xl-push-6 {\n    left: 50%; }\n  .col-xl-push-5 {\n    left: 41.66666667%; }\n  .col-xl-push-4 {\n    left: 33.33333333%; }\n  .col-xl-push-3 {\n    left: 25%; }\n  .col-xl-push-2 {\n    left: 16.66666667%; }\n  .col-xl-push-1 {\n    left: 8.33333333%; }\n  .col-xl-push-0 {\n    left: auto; }\n  .col-xl-offset-12 {\n    margin-left: 100%; }\n  .col-xl-offset-11 {\n    margin-left: 91.66666667%; }\n  .col-xl-offset-10 {\n    margin-left: 83.33333333%; }\n  .col-xl-offset-9 {\n    margin-left: 75%; }\n  .col-xl-offset-8 {\n    margin-left: 66.66666667%; }\n  .col-xl-offset-7 {\n    margin-left: 58.33333333%; }\n  .col-xl-offset-6 {\n    margin-left: 50%; }\n  .col-xl-offset-5 {\n    margin-left: 41.66666667%; }\n  .col-xl-offset-4 {\n    margin-left: 33.33333333%; }\n  .col-xl-offset-3 {\n    margin-left: 25%; }\n  .col-xl-offset-2 {\n    margin-left: 16.66666667%; }\n  .col-xl-offset-1 {\n    margin-left: 8.33333333%; }\n  .col-xl-offset-0 {\n    margin-left: 0; }\n  .visible-xl {\n    display: block !important; }\n  table.visible-xl {\n    display: table; }\n  tr.visible-xl {\n    display: table-row !important; }\n  th.visible-xl, td.visible-xl {\n    display: table-cell !important; }\n  .visible-xl-block {\n    display: block !important; }\n  .visible-xl-inline {\n    display: inline !important; }\n  .visible-xl-inline-block {\n    display: inline-block !important; }\n  .hidden-xl {\n    display: none !important; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Raleway', sans-serif; }\n\nbody {\n  margin: 0;\n  text-align: center;\n  background-color: #fbfbfb; }\n\nheader {\n  margin-top: 150px;\n  margin-bottom: 100px;\n  color: #a0ce4e; }\n  header h1 {\n    font-size: 50px; }\n\n#filters {\n  max-width: 800px;\n  margin: auto; }\n  #filters input,\n  #filters button {\n    margin-bottom: 30px;\n    font-size: 17px;\n    width: 80%; }\n  #filters input[type=\"text\"] {\n    background-color: #fbfbfb;\n    border: 0;\n    border-bottom: 1px solid; }\n    #filters input[type=\"text\"]:focus {\n      outline: none; }\n\n.btn,\n.btn:focus {\n  color: #fbfbfb;\n  background-color: #a0ce4e;\n  padding: 15px;\n  font-size: 20px; }\n\n.btn:hover,\n.btn:hover:focus {\n  color: #a0ce4e;\n  border: 1px solid #a0ce4e;\n  background-color: #fbfbfb; }\n\n.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {\n  outline: none; }\n\n.btn:active {\n  box-shadow: none; }\n\n#return_flight p {\n  font-size: 25px;\n  margin: 30px 0;\n  color: #a0ce4e; }\n\nbody.detail {\n  background-color: #a0ce4e; }\n\nmain#detail.filter_closed #left {\n  left: -400px; }\n\nmain#detail.filter_closed #center {\n  margin-left: 0; }\n\nmain#detail #left {\n  box-shadow: 0px 0px 4px 1px #B5B5B5;\n  background-color: #fbfbfb;\n  position: fixed;\n  min-width: 400px;\n  width: 400px;\n  height: 100%;\n  border-right: 1px solid #a0ce4e;\n  overflow-y: auto; }\n  main#detail #left header {\n    margin-top: 50px; }\n\nmain#detail #center {\n  text-align: left;\n  margin-left: 400px; }\n  main#detail #center #sort_bar {\n    font-size: 15px;\n    box-shadow: 0px 0px 4px 1px #B5B5B5;\n    background-color: #fbfbfb;\n    margin-left: 5px;\n    width: calc(100% - 5px);\n    padding: 15px 30px; }\n    main#detail #center #sort_bar .sort_item {\n      min-width: 10%;\n      display: block;\n      float: left; }\n    main#detail #center #sort_bar span.sort_item {\n      line-height: 34px;\n      font-size: 20px;\n      font-weight: bold;\n      color: #a0ce4e; }\n    main#detail #center #sort_bar #sort_list .sort_item {\n      min-width: auto; }\n      main#detail #center #sort_bar #sort_list .sort_item button.btn {\n        padding: 5px 15px;\n        font-size: 16px;\n        min-width: auto;\n        margin-right: 10px; }\n  main#detail #center ul {\n    list-style: none;\n    margin: 0;\n    padding: 0; }\n  main#detail #center li.result {\n    padding: 5px;\n    transition: all .15s; }\n    main#detail #center li.result > div.result_wrapper {\n      height: auto;\n      overflow: hidden;\n      box-shadow: 0px 0px 4px 1px #B5B5B5;\n      background-color: #fbfbfb; }\n      main#detail #center li.result > div.result_wrapper .row {\n        margin-top: 20px;\n        margin-bottom: 20px; }\n      main#detail #center li.result > div.result_wrapper .result_seg .route_detail span.from {\n        font-size: 14px; }\n      main#detail #center li.result > div.result_wrapper .result_seg .route_detail span.to {\n        font-size: 18px; }\n      main#detail #center li.result > div.result_wrapper .result_seg .route_price span.price {\n        font-size: 18px;\n        font-weight: bold; }\n      main#detail #center li.result > div.result_wrapper .route_add_info {\n        margin-top: 40px; }\n      main#detail #center li.result > div.result_wrapper .dest_from_to_row .dotts {\n        padding-left: 20px; }\n      main#detail #center li.result > div.result_wrapper .result_add {\n        border-top: 1px solid #a0ce4e;\n        position: absolute;\n        background-color: #fbfbfb;\n        width: calc(100% - 10px);\n        z-index: 1; }\n", ""]);
+	exports.push([module.id, ".row {\n  margin-right: 0px;\n  margin-left: 0px; }\n\n/*\r\n*   CSS file with Bootstrap grid classes for screens bigger than 1600px. Just add this file after the Bootstrap CSS file and you will be able to juse col-xl, col-xl-push, hidden-xl, etc.\r\n*\r\n*   Author: Marc van Nieuwenhuijzen\r\n*   Company: WebVakman\r\n*   Site: WebVakman.nl\r\n*\r\n*/\n@media (min-width: 1200px) and (max-width: 1599px) {\n  .hidden-lg {\n    display: none !important; } }\n\n.visible-xl-block,\n.visible-xl-inline,\n.visible-xl-inline-block,\n.visible-xl {\n  display: none !important; }\n\n@media (min-width: 1600px) {\n  .container {\n    width: 1570px; }\n  .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {\n    float: left; }\n  .col-xl-12 {\n    width: 100%; }\n  .col-xl-11 {\n    width: 91.66666667%; }\n  .col-xl-10 {\n    width: 83.33333333%; }\n  .col-xl-9 {\n    width: 75%; }\n  .col-xl-8 {\n    width: 66.66666667%; }\n  .col-xl-7 {\n    width: 58.33333333%; }\n  .col-xl-6 {\n    width: 50%; }\n  .col-xl-5 {\n    width: 41.66666667%; }\n  .col-xl-4 {\n    width: 33.33333333%; }\n  .col-xl-3 {\n    width: 25%; }\n  .col-xl-2 {\n    width: 16.66666667%; }\n  .col-xl-1 {\n    width: 8.33333333%; }\n  .col-xl-pull-12 {\n    right: 100%; }\n  .col-xl-pull-11 {\n    right: 91.66666667%; }\n  .col-xl-pull-10 {\n    right: 83.33333333%; }\n  .col-xl-pull-9 {\n    right: 75%; }\n  .col-xl-pull-8 {\n    right: 66.66666667%; }\n  .col-xl-pull-7 {\n    right: 58.33333333%; }\n  .col-xl-pull-6 {\n    right: 50%; }\n  .col-xl-pull-5 {\n    right: 41.66666667%; }\n  .col-xl-pull-4 {\n    right: 33.33333333%; }\n  .col-xl-pull-3 {\n    right: 25%; }\n  .col-xl-pull-2 {\n    right: 16.66666667%; }\n  .col-xl-pull-1 {\n    right: 8.33333333%; }\n  .col-xl-pull-0 {\n    right: auto; }\n  .col-xl-push-12 {\n    left: 100%; }\n  .col-xl-push-11 {\n    left: 91.66666667%; }\n  .col-xl-push-10 {\n    left: 83.33333333%; }\n  .col-xl-push-9 {\n    left: 75%; }\n  .col-xl-push-8 {\n    left: 66.66666667%; }\n  .col-xl-push-7 {\n    left: 58.33333333%; }\n  .col-xl-push-6 {\n    left: 50%; }\n  .col-xl-push-5 {\n    left: 41.66666667%; }\n  .col-xl-push-4 {\n    left: 33.33333333%; }\n  .col-xl-push-3 {\n    left: 25%; }\n  .col-xl-push-2 {\n    left: 16.66666667%; }\n  .col-xl-push-1 {\n    left: 8.33333333%; }\n  .col-xl-push-0 {\n    left: auto; }\n  .col-xl-offset-12 {\n    margin-left: 100%; }\n  .col-xl-offset-11 {\n    margin-left: 91.66666667%; }\n  .col-xl-offset-10 {\n    margin-left: 83.33333333%; }\n  .col-xl-offset-9 {\n    margin-left: 75%; }\n  .col-xl-offset-8 {\n    margin-left: 66.66666667%; }\n  .col-xl-offset-7 {\n    margin-left: 58.33333333%; }\n  .col-xl-offset-6 {\n    margin-left: 50%; }\n  .col-xl-offset-5 {\n    margin-left: 41.66666667%; }\n  .col-xl-offset-4 {\n    margin-left: 33.33333333%; }\n  .col-xl-offset-3 {\n    margin-left: 25%; }\n  .col-xl-offset-2 {\n    margin-left: 16.66666667%; }\n  .col-xl-offset-1 {\n    margin-left: 8.33333333%; }\n  .col-xl-offset-0 {\n    margin-left: 0; }\n  .visible-xl {\n    display: block !important; }\n  table.visible-xl {\n    display: table; }\n  tr.visible-xl {\n    display: table-row !important; }\n  th.visible-xl, td.visible-xl {\n    display: table-cell !important; }\n  .visible-xl-block {\n    display: block !important; }\n  .visible-xl-inline {\n    display: inline !important; }\n  .visible-xl-inline-block {\n    display: inline-block !important; }\n  .hidden-xl {\n    display: none !important; } }\n\n* {\n  box-sizing: border-box;\n  font-family: 'Raleway', sans-serif; }\n\nbody {\n  margin: 0;\n  text-align: center;\n  background-color: #fbfbfb; }\n\nheader {\n  margin-top: 150px;\n  margin-bottom: 100px;\n  color: #a0ce4e; }\n  header h1 {\n    font-size: 50px; }\n\n#filters {\n  max-width: 800px;\n  margin: auto; }\n  #filters input,\n  #filters button {\n    margin-bottom: 30px;\n    font-size: 17px;\n    width: 80%; }\n  #filters input[type=\"text\"] {\n    background-color: #fbfbfb;\n    border: 0;\n    border-bottom: 1px solid; }\n    #filters input[type=\"text\"]:focus {\n      outline: none; }\n\n.btn,\n.btn:focus {\n  color: #fbfbfb;\n  background-color: #a0ce4e;\n  padding: 15px;\n  font-size: 20px; }\n\n.btn:hover,\n.btn:hover:focus {\n  color: #a0ce4e;\n  border: 1px solid #a0ce4e;\n  background-color: #fbfbfb; }\n\n.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {\n  outline: none; }\n\n.btn:active {\n  box-shadow: none; }\n\n#return_flight p {\n  font-size: 25px;\n  margin: 30px 0;\n  color: #a0ce4e; }\n\nbody.detail {\n  background-color: #a0ce4e; }\n\nmain#detail.filter_closed #left {\n  left: -400px; }\n\nmain#detail.filter_closed #center {\n  margin-left: 0; }\n\nmain#detail #left {\n  box-shadow: 0px 0px 4px 1px #B5B5B5;\n  background-color: #fbfbfb;\n  position: fixed;\n  min-width: 400px;\n  width: 400px;\n  height: 100%;\n  border-right: 1px solid #a0ce4e;\n  overflow-y: auto; }\n  main#detail #left header {\n    margin-top: 50px; }\n\nmain#detail #center {\n  text-align: left;\n  margin-left: 400px; }\n  main#detail #center #sort_bar {\n    font-size: 15px;\n    box-shadow: 0px 0px 4px 1px #B5B5B5;\n    background-color: #fbfbfb;\n    margin-left: 5px;\n    width: calc(100% - 5px);\n    padding: 15px 30px;\n    position: fixed;\n    z-index: 1; }\n    main#detail #center #sort_bar .sort_item {\n      min-width: 10%;\n      display: block;\n      float: left; }\n    main#detail #center #sort_bar span.sort_item {\n      line-height: 34px;\n      font-size: 20px;\n      font-weight: bold;\n      color: #a0ce4e; }\n    main#detail #center #sort_bar #sort_list .sort_item {\n      min-width: auto; }\n      main#detail #center #sort_bar #sort_list .sort_item button.btn {\n        padding: 5px 15px;\n        font-size: 16px;\n        min-width: auto;\n        margin-right: 10px; }\n  main#detail #center ul {\n    list-style: none;\n    margin: 0;\n    padding: 0; }\n  main#detail #center ul#results_list {\n    margin-top: 70px; }\n  main#detail #center li.result {\n    padding: 5px;\n    transition: all .15s; }\n    main#detail #center li.result > div.result_wrapper {\n      height: auto;\n      overflow: hidden;\n      box-shadow: 0px 0px 4px 1px #B5B5B5;\n      background-color: #fbfbfb; }\n      main#detail #center li.result > div.result_wrapper .row {\n        margin-top: 20px;\n        margin-bottom: 20px; }\n      main#detail #center li.result > div.result_wrapper .result_seg .route_detail span.from {\n        font-size: 14px; }\n      main#detail #center li.result > div.result_wrapper .result_seg .route_detail span.to {\n        font-size: 18px; }\n      main#detail #center li.result > div.result_wrapper .result_seg .route_price span.price {\n        font-size: 18px;\n        font-weight: bold; }\n      main#detail #center li.result > div.result_wrapper .route_add_info {\n        margin-top: 40px; }\n      main#detail #center li.result > div.result_wrapper .dest_from_to_row .dotts {\n        padding-left: 20px; }\n      main#detail #center li.result > div.result_wrapper .result_add {\n        border-top: 1px solid #a0ce4e;\n        position: absolute;\n        background-color: #fbfbfb;\n        width: calc(100% - 10px);\n        z-index: 1; }\n        main#detail #center li.result > div.result_wrapper .result_add .route_back .return_flight {\n          font-weight: bold; }\n\n@-webkit-keyframes rotating {\n  from {\n    -ms-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -webkit-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  to {\n    -ms-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -webkit-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n@keyframes rotating {\n  from {\n    -ms-transform: rotate(0deg);\n    -moz-transform: rotate(0deg);\n    -webkit-transform: rotate(0deg);\n    -o-transform: rotate(0deg);\n    transform: rotate(0deg); }\n  to {\n    -ms-transform: rotate(360deg);\n    -moz-transform: rotate(360deg);\n    -webkit-transform: rotate(360deg);\n    -o-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n.rotating {\n  -webkit-animation: rotating 2s linear infinite;\n  -moz-animation: rotating 2s linear infinite;\n  -ms-animation: rotating 2s linear infinite;\n  -o-animation: rotating 2s linear infinite;\n  animation: rotating 2s linear infinite; }\n\n#loading {\n  text-align: center;\n  padding-top: 300px; }\n  #loading i.fa {\n    font-size: 150px; }\n", ""]);
 
 	// exports
 
@@ -20071,6 +20065,10 @@
 
 	var _Results2 = _interopRequireDefault(_Results);
 
+	var _Loading = __webpack_require__(198);
+
+	var _Loading2 = _interopRequireDefault(_Loading);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -20098,9 +20096,12 @@
 	        { id: 'detail' },
 	        _react2.default.createElement(_Filter2.default, { actions: this.props.actions }),
 	        function () {
+	          if (_this2.props.loading) {
+	            return _react2.default.createElement(_Loading2.default, null);
+	          }
 	          if (_this2.props.flights.data.length > 0) {
 	            console.log('render Results');
-	            return _react2.default.createElement(_Results2.default, { flights: _this2.props.flights.data });
+	            return _react2.default.createElement(_Results2.default, { actions: _this2.props.actions, flights: _this2.props.flights.data, filters: _this2.props.flights.filters });
 	          }
 	        }()
 	      );
@@ -21642,20 +21643,52 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var actions = {
-		receiveFlights: function receiveFlights(flights, query) {
+		receiveFlights: function receiveFlights(flights, filters) {
 			return {
 				type: 'RECEIVE_FLIGHTS',
 				flights: flights,
-				query: query
+				filters: filters
 
 			};
 		},
 
-		getFlights: function getFlights(query) {
+		addFilter: function addFilter(_ref) {
+			var type = _ref.type;
+			var value = _ref.value;
+
+			return {
+				type: 'ADD_FILTER',
+				filter: {
+					type: type,
+					value: value
+				}
+			};
+		},
+
+		getFlights: function getFlights(filters) {
+			//TODO Build query
+			var query = 'https://api.skypicker.com/flights?v=2&locale=en';
+			if (filters.sort) query += '&sort=' + filters.sort;
+			query += '&flyFrom=' + filters.flyFrom + '&to=' + filters.to + '&dateFrom=' + filters.dateFrom + '&dateTo=' + filters.dateTo;
+			if (filters.returnFrom && filters.returnTo) query += '&typeFlight=return&returnFrom=' + filters.returnFrom + '&returnTo=' + filters.returnTo;
+			console.log('getFlights', query);
 			return function (dispatch) {
+				dispatch(actions.enableLoading());
 				(0, _reqwest2.default)(query, function (resp) {
-					dispatch(actions.receiveFlights(resp.data, query));
+					dispatch(actions.disableLoading());
+					dispatch(actions.receiveFlights(resp.data, filters));
 				});
+			};
+		},
+
+		enableLoading: function enableLoading() {
+			return {
+				type: 'ENABLE_LOADING'
+			};
+		},
+		disableLoading: function disableLoading() {
+			return {
+				type: 'DISABLE_LOADING'
 			};
 		}
 	};
@@ -22334,6 +22367,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -22387,8 +22422,13 @@
 	  }, {
 	    key: 'removeReturnFlight',
 	    value: function removeReturnFlight() {
-	      this.setState({
-	        returnFlight: false
+	      var _this2 = this;
+
+	      var newState = Object.assign({}, this.state);
+	      newState.returnFlight = false;
+	      newState.filterValues.returnFrom = newState.filterValues.returnTo = null;
+	      this.setState(newState, function () {
+	        _this2.props.actions.getFlights(_this2.state.filterValues);
 	      });
 	    }
 	  }, {
@@ -22396,12 +22436,10 @@
 	    value: function handleSubmit(e) {
 	      e.preventDefault();
 	      console.log(this.state.filterValues);
-	      var query = 'https://api.skypicker.com/flights?v=2&locale=en&flyFrom=' + this.state.filterValues.flyFrom + '&to=' + this.state.filterValues.to + '&dateFrom=' + this.state.filterValues.dateFrom + '&dateTo=' + this.state.filterValues.dateTo;
-	      if (this.state.returnFlight) query += '&typeFlight=return&returnFrom=' + this.state.filterValues.returnFrom + '&returnTo=' + this.state.filterValues.returnTo;
-	      /*reqwest(query, (resp) => {
-	        console.log(resp)
-	      })*/
-	      this.props.actions.getFlights(query);
+	      /*let query = `https://api.skypicker.com/flights?v=2&locale=en&flyFrom=${this.state.filterValues.flyFrom}&to=${this.state.filterValues.to}&dateFrom=${this.state.filterValues.dateFrom}&dateTo=${this.state.filterValues.dateTo}`
+	      if(this.state.returnFlight)
+	        query += `&typeFlight=return&returnFrom=${this.state.filterValues.returnFrom}&returnTo=${this.state.filterValues.returnTo}`*/
+	      this.props.actions.getFlights(this.state.filterValues);
 	    }
 	  }, {
 	    key: 'render',
@@ -22410,6 +22448,8 @@
 
 	      var returnFlight = null;
 	      if (!self.state.returnFlight) {
+	        var _React$createElement;
+
 	        returnFlight = _react2.default.createElement(
 	          'div',
 	          null,
@@ -22418,22 +22458,24 @@
 	            { id: 'add_return_wrapper' },
 	            _react2.default.createElement(
 	              'div',
-	              { 'class': 'col col-xs-12' },
+	              { className: 'col col-xs-12' },
 	              _react2.default.createElement(
 	                'button',
-	                { className: 'btn', type: 'button', 'class': 'btn', id: 'add_return_button', onClick: self.addReturnFlight },
+	                (_React$createElement = { className: 'btn', type: 'button' }, _defineProperty(_React$createElement, 'className', 'btn'), _defineProperty(_React$createElement, 'id', 'add_return_button'), _defineProperty(_React$createElement, 'onClick', self.addReturnFlight), _React$createElement),
 	                'Add return flight'
 	              )
 	            )
 	          )
 	        );
 	      } else {
+	        var _React$createElement2;
+
 	        returnFlight = _react2.default.createElement(
 	          'div',
 	          null,
 	          _react2.default.createElement(
 	            'div',
-	            { id: 'return_flight', 'class': 'clearfix' },
+	            { id: 'return_flight', className: 'clearfix' },
 	            _react2.default.createElement(
 	              'p',
 	              null,
@@ -22447,10 +22489,10 @@
 	            { id: 'remove_return_wrapper' },
 	            _react2.default.createElement(
 	              'div',
-	              { 'class': 'col col-xs-12' },
+	              { className: 'col col-xs-12' },
 	              _react2.default.createElement(
 	                'button',
-	                { className: 'btn', type: 'button', 'class': 'btn', id: 'remove_return_button', onClick: self.removeReturnFlight },
+	                (_React$createElement2 = { className: 'btn', type: 'button' }, _defineProperty(_React$createElement2, 'className', 'btn'), _defineProperty(_React$createElement2, 'id', 'remove_return_button'), _defineProperty(_React$createElement2, 'onClick', self.removeReturnFlight), _React$createElement2),
 	                'Only direct flight'
 	              )
 	            )
@@ -22474,7 +22516,7 @@
 	          { id: 'filters', onSubmit: self.handleSubmit },
 	          _react2.default.createElement(
 	            'div',
-	            { id: 'directflight_filters', 'class': 'clearfix' },
+	            { id: 'directflight_filters', className: 'clearfix' },
 	            _react2.default.createElement(_InputPlace2.default, { name: 'flyFrom', value: self.state.filterValues.flyFrom, setValue: self.setFilterValue, placeholder: 'Departure' }),
 	            _react2.default.createElement(_InputPlace2.default, { name: 'to', value: self.state.filterValues.to, setValue: self.setFilterValue, placeholder: 'Arrival' }),
 	            _react2.default.createElement(_InputDate2.default, { name: 'dateFrom', value: self.state.filterValues.dateFrom, setValue: self.setFilterValue, placeholder: 'Date from' }),
@@ -22486,7 +22528,7 @@
 	            { id: 'search_wrapper' },
 	            _react2.default.createElement(
 	              'div',
-	              { 'class': 'col col-xs-12' },
+	              { className: 'col col-xs-12' },
 	              _react2.default.createElement('input', { type: 'submit', className: 'btn', name: 'submit', value: 'Search!' })
 	            )
 	          )
@@ -22628,7 +22670,7 @@
 
 	var _Result2 = _interopRequireDefault(_Result);
 
-	var _Sortbar = __webpack_require__(195);
+	var _Sortbar = __webpack_require__(197);
 
 	var _Sortbar2 = _interopRequireDefault(_Sortbar);
 
@@ -22696,7 +22738,7 @@
 	      return _react2.default.createElement(
 	        'section',
 	        { id: 'center', className: 'clearfix' },
-	        _react2.default.createElement(_Sortbar2.default, { loadMore: this.loadMore }),
+	        _react2.default.createElement(_Sortbar2.default, { actions: this.props.actions, filters: this.props.filters, loadMore: this.loadMore }),
 	        _react2.default.createElement(
 	          'ul',
 	          { id: 'results_list' },
@@ -22728,6 +22770,16 @@
 	var _react = __webpack_require__(5);
 
 	var _react2 = _interopRequireDefault(_react);
+
+	var _timeUtils = __webpack_require__(195);
+
+	var timeUtils = _interopRequireWildcard(_timeUtils);
+
+	var _ResultAddInfo = __webpack_require__(196);
+
+	var _ResultAddInfo2 = _interopRequireDefault(_ResultAddInfo);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22772,6 +22824,13 @@
 
 				var result = this.props.data;
 				var self = this;
+
+				var routesThere = result.route.filter(function (route) {
+					return route.return === 0;
+				});
+				var routesBack = result.route.filter(function (route) {
+					return route.return === 1;
+				});
 
 				return _react2.default.createElement(
 					'li',
@@ -22825,7 +22884,7 @@
 									_react2.default.createElement(
 										'span',
 										{ className: 'date' },
-										this.getDateFromUTC(result.aTimeUTC)
+										timeUtils.getDateFromUTC(result.aTimeUTC)
 									)
 								),
 								_react2.default.createElement(
@@ -22834,9 +22893,9 @@
 									_react2.default.createElement(
 										'span',
 										{ className: 'time' },
-										this.getTimeFromUTC(result.dTimeUTC),
+										timeUtils.getTimeFromUTC(result.dTimeUTC),
 										' - ',
-										this.getTimeFromUTC(result.aTimeUTC)
+										timeUtils.getTimeFromUTC(result.aTimeUTC)
 									)
 								),
 								_react2.default.createElement(
@@ -22847,121 +22906,10 @@
 							)
 						),
 						function () {
-							//Additional info
-							var routesThere = result.route.filter(function (route) {
-								return route.return === 0;
-							});
-							var routesBack = result.route.filter(function (route) {
-								return route.return === 1;
-							});
-							if (self.state.addInfo) return _react2.default.createElement(
-								'div',
-								{ className: 'result_add clearfix' },
-								_react2.default.createElement(
-									'div',
-									{ className: 'route_there' },
-									routesThere.map(function (route) {
-										return _react2.default.createElement(
-											'div',
-											{ className: 'row route' },
-											_react2.default.createElement(
-												'div',
-												{ className: 'route_detail col col-xs-6' },
-												_react2.default.createElement(
-													'div',
-													{ className: 'dest_from row' },
-													_react2.default.createElement(
-														'span',
-														{ className: 'dest_from_text col col-xs-6' },
-														route.cityFrom
-													),
-													_react2.default.createElement(
-														'span',
-														{ className: 'dest_from_date col col-xs-6' },
-														self.getTimeFromUTC(route.dTimeUTC),
-														' ',
-														self.getDateFromUTC(route.dTimeUTC)
-													)
-												),
-												_react2.default.createElement(
-													'div',
-													{ className: 'dest_from_to_row row' },
-													_react2.default.createElement('i', { className: 'dotts fa fa-ellipsis-v col col-xs-6' }),
-													_react2.default.createElement(
-														'span',
-														{ className: 'route_time col col-xs-6' },
-														self.getIntervalBetweenTimes(route.aTimeUTC, route.dTimeUTC)
-													)
-												),
-												_react2.default.createElement(
-													'div',
-													{ className: 'dest_to row' },
-													_react2.default.createElement(
-														'span',
-														{ className: 'dest_to_text col col-xs-6' },
-														'Paris'
-													),
-													_react2.default.createElement(
-														'span',
-														{ className: 'dest_from_date col col-xs-6' },
-														self.getTimeFromUTC(route.aTimeUTC),
-														' ',
-														self.getDateFromUTC(route.aTimeUTC)
-													)
-												)
-											),
-											_react2.default.createElement(
-												'div',
-												{ className: 'route_add_info col col-xs-6' },
-												_react2.default.createElement(
-													'div',
-													{ className: 'route_logo' },
-													_react2.default.createElement('img', { src: 'https://s3-eu-west-1.amazonaws.com/images.skypicker.com/airlines/32/' + route.airline + '.png', alt: 'logo', className: 'logo' })
-												),
-												_react2.default.createElement(
-													'div',
-													{ className: 'route_flight_info' },
-													_react2.default.createElement(
-														'span',
-														{ className: 'info' },
-														'Flight no. ',
-														route.airline,
-														' ',
-														route.flight_no
-													)
-												)
-											)
-										);
-									})
-								)
-							);
+							if (self.state.addInfo) return _react2.default.createElement(_ResultAddInfo2.default, { routesThere: routesThere, routesBack: routesBack });
 						}()
 					)
 				);
-			}
-		}, {
-			key: 'getDateFromUTC',
-			value: function getDateFromUTC(utcSeconds) {
-				var d = new Date(0);
-				d.setUTCSeconds(utcSeconds);
-				var format = d.getDate() + '.' + d.getMonth() + '.' + d.getFullYear();
-				return format;
-			}
-		}, {
-			key: 'getTimeFromUTC',
-			value: function getTimeFromUTC(utcSeconds) {
-				var d = new Date(0);
-				d.setUTCSeconds(utcSeconds);
-				var format = d.getHours() + ':' + d.getMinutes();
-				return format;
-			}
-		}, {
-			key: 'getIntervalBetweenTimes',
-			value: function getIntervalBetweenTimes(time1, time2) {
-				var totalSec = time1 - time2;
-				var hours = parseInt(totalSec / 3600) % 24;
-				var minutes = parseInt(totalSec / 60) % 60;
-				return '' + hours + 'h ' + minutes + 'm';
 			}
 		}]);
 
@@ -22972,9 +22920,265 @@
 
 /***/ },
 /* 195 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.getDateFromUTC = getDateFromUTC;
+	exports.getTimeFromUTC = getTimeFromUTC;
+	exports.getIntervalBetweenTimes = getIntervalBetweenTimes;
+	function getDateFromUTC(utcSeconds) {
+		var d = new Date(0);
+		d.setUTCSeconds(utcSeconds);
+		var format = d.getDate() + '.' + d.getMonth() + '.' + d.getFullYear();
+		return format;
+	}
+
+	function getTimeFromUTC(utcSeconds) {
+		var d = new Date(0);
+		d.setUTCSeconds(utcSeconds);
+		var format = d.getHours() + ':' + d.getMinutes();
+		return format;
+	}
+
+	function getIntervalBetweenTimes(time1, time2) {
+		var totalSec = time1 - time2;
+		var hours = parseInt(totalSec / 3600) % 24;
+		var minutes = parseInt(totalSec / 60) % 60;
+		return '' + hours + 'h ' + minutes + 'm';
+	}
+
+/***/ },
+/* 196 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _timeUtils = __webpack_require__(195);
+
+	var timeUtils = _interopRequireWildcard(_timeUtils);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var ResultAddInfo = function (_Component) {
+	  _inherits(ResultAddInfo, _Component);
+
+	  function ResultAddInfo() {
+	    _classCallCheck(this, ResultAddInfo);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(ResultAddInfo).apply(this, arguments));
+	  }
+
+	  _createClass(ResultAddInfo, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+
+	      var self = this;
+	      console.log('render ResultAddInfo');
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'result_add clearfix' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'route_there' },
+	          this.props.routesThere.map(function (route) {
+	            return _react2.default.createElement(
+	              'div',
+	              { className: 'row route' },
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'route_detail col col-xs-6' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'dest_from row' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'dest_from_text col col-xs-6' },
+	                    route.cityFrom
+	                  ),
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'dest_from_date col col-xs-6' },
+	                    timeUtils.getTimeFromUTC(route.dTimeUTC),
+	                    ' ',
+	                    timeUtils.getDateFromUTC(route.dTimeUTC)
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'dest_from_to_row row' },
+	                  _react2.default.createElement('i', { className: 'dotts fa fa-ellipsis-v col col-xs-6' }),
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'route_time col col-xs-6' },
+	                    timeUtils.getIntervalBetweenTimes(route.aTimeUTC, route.dTimeUTC)
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'dest_to row' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'dest_to_text col col-xs-6' },
+	                    route.cityTo
+	                  ),
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'dest_from_date col col-xs-6' },
+	                    timeUtils.getTimeFromUTC(route.aTimeUTC),
+	                    ' ',
+	                    timeUtils.getDateFromUTC(route.aTimeUTC)
+	                  )
+	                )
+	              ),
+	              _react2.default.createElement(
+	                'div',
+	                { className: 'route_add_info col col-xs-6' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'route_logo' },
+	                  _react2.default.createElement('img', { src: 'https://s3-eu-west-1.amazonaws.com/images.skypicker.com/airlines/32/' + route.airline + '.png', alt: 'logo', className: 'logo' })
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'route_flight_info' },
+	                  _react2.default.createElement(
+	                    'span',
+	                    { className: 'info' },
+	                    'Flight no. ',
+	                    route.airline,
+	                    ' ',
+	                    route.flight_no
+	                  )
+	                )
+	              )
+	            );
+	          })
+	        ),
+	        function () {
+	          if (self.props.routesBack.length > 0) return _react2.default.createElement(
+	            'div',
+	            { className: 'route_back' },
+	            _react2.default.createElement(
+	              'div',
+	              { classname: 'row' },
+	              _react2.default.createElement(
+	                'p',
+	                { className: 'return_flight col col-xs-12' },
+	                'Return flight'
+	              )
+	            ),
+	            _this2.props.routesBack.map(function (route) {
+	              return _react2.default.createElement(
+	                'div',
+	                { className: 'row route' },
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'route_detail col col-xs-6' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'dest_from row' },
+	                    _react2.default.createElement(
+	                      'span',
+	                      { className: 'dest_from_text col col-xs-6' },
+	                      route.cityFrom
+	                    ),
+	                    _react2.default.createElement(
+	                      'span',
+	                      { className: 'dest_from_date col col-xs-6' },
+	                      timeUtils.getTimeFromUTC(route.dTimeUTC),
+	                      ' ',
+	                      timeUtils.getDateFromUTC(route.dTimeUTC)
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'dest_from_to_row row' },
+	                    _react2.default.createElement('i', { className: 'dotts fa fa-ellipsis-v col col-xs-6' }),
+	                    _react2.default.createElement(
+	                      'span',
+	                      { className: 'route_time col col-xs-6' },
+	                      timeUtils.getIntervalBetweenTimes(route.aTimeUTC, route.dTimeUTC)
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'dest_to row' },
+	                    _react2.default.createElement(
+	                      'span',
+	                      { className: 'dest_to_text col col-xs-6' },
+	                      route.cityTo
+	                    ),
+	                    _react2.default.createElement(
+	                      'span',
+	                      { className: 'dest_from_date col col-xs-6' },
+	                      timeUtils.getTimeFromUTC(route.aTimeUTC),
+	                      ' ',
+	                      timeUtils.getDateFromUTC(route.aTimeUTC)
+	                    )
+	                  )
+	                ),
+	                _react2.default.createElement(
+	                  'div',
+	                  { className: 'route_add_info col col-xs-6' },
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'route_logo' },
+	                    _react2.default.createElement('img', { src: 'https://s3-eu-west-1.amazonaws.com/images.skypicker.com/airlines/32/' + route.airline + '.png', alt: 'logo', className: 'logo' })
+	                  ),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { className: 'route_flight_info' },
+	                    _react2.default.createElement(
+	                      'span',
+	                      { className: 'info' },
+	                      'Flight no. ',
+	                      route.airline,
+	                      ' ',
+	                      route.flight_no
+	                    )
+	                  )
+	                )
+	              );
+	            })
+	          );
+	        }()
+	      );
+	    }
+	  }]);
+
+	  return ResultAddInfo;
+	}(_react.Component);
+
+	exports.default = ResultAddInfo;
+
+/***/ },
+/* 197 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -23004,62 +23208,70 @@
 	  }
 
 	  _createClass(Sortbas, [{
-	    key: "render",
+	    key: 'handleSort',
+	    value: function handleSort(type) {
+	      console.log('sort by', type);
+	      console.log(this.props.filters);
+	      var filters = Object.assign({}, this.props.filters, { sort: type });
+	      this.props.actions.getFlights(filters);
+	    }
+	  }, {
+	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
-	        { id: "sort_bar", className: "clearfix" },
+	        'div',
+	        { id: 'sort_bar', className: 'clearfix' },
 	        _react2.default.createElement(
-	          "span",
-	          { className: "sort_item" },
-	          "Sort"
+	          'span',
+	          { className: 'sort_item' },
+	          'Sort'
 	        ),
 	        _react2.default.createElement(
-	          "ul",
-	          { id: "sort_list" },
+	          'ul',
+	          { id: 'sort_list' },
 	          _react2.default.createElement(
-	            "li",
-	            { className: "sort_item" },
+	            'li',
+	            { className: 'sort_item' },
 	            _react2.default.createElement(
-	              "button",
-	              { className: "btn", type: "button" },
-	              "Best"
+	              'button',
+	              { onClick: this.handleSort.bind(this, 'quality'), className: 'btn', type: 'button' },
+	              'Best'
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "li",
-	            { className: "sort_item" },
+	            'li',
+	            { className: 'sort_item' },
 	            _react2.default.createElement(
-	              "button",
-	              { className: "btn", type: "button" },
-	              "Cheapest"
+	              'button',
+	              { onClick: this.handleSort.bind(this, 'price'), className: 'btn', type: 'button' },
+	              'Cheapest'
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "li",
-	            { className: "sort_item" },
+	            'li',
+	            { className: 'sort_item' },
 	            _react2.default.createElement(
-	              "button",
-	              { className: "btn", type: "button" },
-	              "Shortest"
+	              'button',
+	              { onClick: this.handleSort.bind(this, 'duration'), className: 'btn', type: 'button' },
+	              'Shortest'
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "li",
-	            { className: "sort_item" },
+	            'li',
+	            { className: 'sort_item' },
 	            _react2.default.createElement(
-	              "button",
-	              { className: "btn", type: "button" },
-	              "Earliest"
+	              'button',
+	              { onClick: this.handleSort.bind(this, 'date'), className: 'btn', type: 'button' },
+	              'Earliest'
 	            )
 	          ),
 	          _react2.default.createElement(
-	            "li",
-	            { className: "sort_item" },
+	            'li',
+	            { className: 'sort_item' },
 	            _react2.default.createElement(
-	              "button",
-	              { className: "btn", type: "button", onClick: this.props.loadMore },
-	              "Add 10 more"
+	              'button',
+	              { onClick: this.props.loadMore, className: 'btn', type: 'button' },
+	              'Add 10 more'
 	            )
 	          )
 	        )
@@ -23073,7 +23285,60 @@
 	exports.default = Sortbas;
 
 /***/ },
-/* 196 */
+/* 198 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(5);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Loading = function (_Component) {
+	  _inherits(Loading, _Component);
+
+	  function Loading() {
+	    _classCallCheck(this, Loading);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Loading).apply(this, arguments));
+	  }
+
+	  _createClass(Loading, [{
+	    key: "render",
+	    value: function render() {
+	      return _react2.default.createElement(
+	        "section",
+	        { id: "center", className: "clearfix" },
+	        _react2.default.createElement(
+	          "div",
+	          { id: "loading" },
+	          _react2.default.createElement("i", { className: "fa fa-spinner rotating" })
+	        )
+	      );
+	    }
+	  }]);
+
+	  return Loading;
+	}(_react.Component);
+
+	exports.default = Loading;
+
+/***/ },
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23085,15 +23350,15 @@
 
 	var _redux = __webpack_require__(170);
 
-	var _reducers = __webpack_require__(197);
+	var _reducers = __webpack_require__(200);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
-	var _reduxLogger = __webpack_require__(200);
+	var _reduxLogger = __webpack_require__(204);
 
 	var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 
-	var _reduxThunk = __webpack_require__(201);
+	var _reduxThunk = __webpack_require__(205);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -23104,15 +23369,15 @@
 	function configureStore() {
 			var initialState = arguments.length <= 0 || arguments[0] === undefined ? {
 					places: [],
-					flights: [],
-					loading: true
+					flights: { data: [], filters: {} },
+					loading: false
 			} : arguments[0];
 
 			return finalCreateStore(_reducers2.default, initialState);
 	}
 
 /***/ },
-/* 197 */
+/* 200 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -23123,25 +23388,30 @@
 
 	var _redux = __webpack_require__(170);
 
-	var _placesReducer = __webpack_require__(198);
+	var _placesReducer = __webpack_require__(201);
 
 	var _placesReducer2 = _interopRequireDefault(_placesReducer);
 
-	var _flightsReducer = __webpack_require__(199);
+	var _flightsReducer = __webpack_require__(202);
 
 	var _flightsReducer2 = _interopRequireDefault(_flightsReducer);
+
+	var _loadingReducer = __webpack_require__(203);
+
+	var _loadingReducer2 = _interopRequireDefault(_loadingReducer);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var rootReducer = (0, _redux.combineReducers)({
 	  places: _placesReducer2.default,
-	  flights: _flightsReducer2.default
+	  flights: _flightsReducer2.default,
+	  loading: _loadingReducer2.default
 	});
 
 	exports.default = rootReducer;
 
 /***/ },
-/* 198 */
+/* 201 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23164,7 +23434,7 @@
 	};
 
 /***/ },
-/* 199 */
+/* 202 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -23175,25 +23445,55 @@
 
 	exports.default = function () {
 		var flights = arguments.length <= 0 || arguments[0] === undefined ? {
-			query: '',
-			data: []
+			flights: { data: [],
+				filters: {} }
 		} : arguments[0];
 		var action = arguments[1];
 
+		var newFlights = {};
 		switch (action.type) {
 			case 'RECEIVE_FLIGHTS':
-				var newFlights = {};
+				console.log('RECEIVE_FLIGHTS');
 				newFlights.data = action.flights;
-				newFlights.query = action.query;
+				newFlights.filters = action.filters;
 				return newFlights;
 				break;
+			case 'ADD_FILTER':
+				newFlights = Object.assign({}, flights);
+				newFlights.filters[action.filter.type] = action.filter.value;
+				return newFlights;
 			default:
 				return flights;
 		}
 	};
 
 /***/ },
-/* 200 */
+/* 203 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	exports.default = function () {
+		var loading = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
+		var action = arguments[1];
+
+		switch (action.type) {
+			case 'ENABLE_LOADING':
+				return true;
+				break;
+			case 'DISABLE_LOADING':
+				return false;
+			default:
+				return loading;
+		}
+	};
+
+/***/ },
+/* 204 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -23426,7 +23726,7 @@
 	module.exports = createLogger;
 
 /***/ },
-/* 201 */
+/* 205 */
 /***/ function(module, exports) {
 
 	'use strict';

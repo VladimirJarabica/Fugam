@@ -10,8 +10,8 @@ let finalCreateStore = compose(
 
 export default function configureStore(initialState = {
 	places: [],
-	flights: [],
-	loading: true
+	flights: { data: [], filters: {}},
+	loading: false
 }) {
   return finalCreateStore(rootReducer, initialState)
 }

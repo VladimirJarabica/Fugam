@@ -43,21 +43,21 @@ class Filter extends Component {
   }
 
   removeReturnFlight() {
-    this.setState({
-      returnFlight: false
+    let newState = Object.assign({}, this.state)
+    newState.returnFlight = false
+    newState.filterValues.returnFrom = newState.filterValues.returnTo = null
+    this.setState(newState, () => {
+      this.props.actions.getFlights(this.state.filterValues)
     })
   }
 
   handleSubmit(e) {
     e.preventDefault()
     console.log(this.state.filterValues)
-    let query = `https://api.skypicker.com/flights?v=2&locale=en&flyFrom=${this.state.filterValues.flyFrom}&to=${this.state.filterValues.to}&dateFrom=${this.state.filterValues.dateFrom}&dateTo=${this.state.filterValues.dateTo}`
+    /*let query = `https://api.skypicker.com/flights?v=2&locale=en&flyFrom=${this.state.filterValues.flyFrom}&to=${this.state.filterValues.to}&dateFrom=${this.state.filterValues.dateFrom}&dateTo=${this.state.filterValues.dateTo}`
     if(this.state.returnFlight)
-      query += `&typeFlight=return&returnFrom=${this.state.filterValues.returnFrom}&returnTo=${this.state.filterValues.returnTo}`
-    /*reqwest(query, (resp) => {
-      console.log(resp)
-    })*/
-    this.props.actions.getFlights(query)
+      query += `&typeFlight=return&returnFrom=${this.state.filterValues.returnFrom}&returnTo=${this.state.filterValues.returnTo}`*/
+    this.props.actions.getFlights(this.state.filterValues)
 
   }
 
@@ -69,8 +69,8 @@ class Filter extends Component {
       returnFlight = (
         <div>
           <div id="add_return_wrapper">
-            <div class="col col-xs-12">
-              <button className="btn" type="button" class="btn" id="add_return_button" onClick={self.addReturnFlight}>Add return flight</button>
+            <div className="col col-xs-12">
+              <button className="btn" type="button" className="btn" id="add_return_button" onClick={self.addReturnFlight}>Add return flight</button>
             </div>
           </div>
         </div>
@@ -78,14 +78,14 @@ class Filter extends Component {
     } else {
       returnFlight = (
         <div>
-          <div id="return_flight" class="clearfix">
+          <div id="return_flight" className="clearfix">
             <p>Return flight</p>
             <InputDate name="returnFrom" value={self.state.filterValues.returnFrom} setValue={self.setFilterValue} placeholder="Date from" />
             <InputDate name="returnTo" value={self.state.filterValues.returnTo} setValue={self.setFilterValue} placeholder="Date to" />
           </div>
           <div id="remove_return_wrapper">
-            <div class="col col-xs-12">
-              <button className="btn" type="button" class="btn" id="remove_return_button" onClick={self.removeReturnFlight}>Only direct flight</button>
+            <div className="col col-xs-12">
+              <button className="btn" type="button" className="btn" id="remove_return_button" onClick={self.removeReturnFlight}>Only direct flight</button>
             </div>
           </div>
         </div>)
@@ -96,7 +96,7 @@ class Filter extends Component {
           <h1>Fugam</h1>
         </header>
         <form id="filters" onSubmit={self.handleSubmit}>
-          <div id="directflight_filters" class="clearfix">
+          <div id="directflight_filters" className="clearfix">
             <InputPlace name="flyFrom" value={self.state.filterValues.flyFrom} setValue={self.setFilterValue} placeholder="Departure" />
             <InputPlace name="to" value={self.state.filterValues.to} setValue={self.setFilterValue} placeholder="Arrival" />
             <InputDate name="dateFrom" value={self.state.filterValues.dateFrom} setValue={self.setFilterValue} placeholder="Date from" />
@@ -104,7 +104,7 @@ class Filter extends Component {
           </div>
           {returnFlight}
           <div id="search_wrapper">
-            <div class="col col-xs-12">
+            <div className="col col-xs-12">
               <input type="submit" className="btn" name="submit" value="Search!" />
             </div>
           </div>

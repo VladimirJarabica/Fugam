@@ -5,6 +5,7 @@ import actions from '../redux/actions'
 
 import Filter from './filter/Filter'
 import Results from './results/Results'
+import Loading from './others/Loading'
 
 class App extends Component {
 
@@ -14,9 +15,12 @@ class App extends Component {
         <Filter actions={this.props.actions} />
         {
           (() => {
+            if(this.props.loading) {
+              return <Loading />
+            }
             if(this.props.flights.data.length > 0) {
               console.log('render Results')
-              return <Results flights={this.props.flights.data} />
+              return <Results actions={this.props.actions} flights={this.props.flights.data} filters={this.props.flights.filters}/>
             }
           })()
         }
