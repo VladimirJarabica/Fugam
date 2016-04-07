@@ -28,7 +28,6 @@ let actions = {
 		query += `&flyFrom=${filters.flyFrom}&to=${filters.to}&dateFrom=${filters.dateFrom}&dateTo=${filters.dateTo}`
     if(filters.returnFrom && filters.returnTo)
       query += `&typeFlight=return&returnFrom=${filters.returnFrom}&returnTo=${filters.returnTo}`
-		console.log('getFlights', query);
 		return (dispatch) => {
 			dispatch(actions.enableLoading())
 			reqwest(query, (resp) => {

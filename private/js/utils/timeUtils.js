@@ -19,3 +19,9 @@ export function getIntervalBetweenTimes(time1, time2) {
 	let minutes = parseInt( totalSec / 60 ) % 60
 	return '' + hours + 'h ' + minutes + 'm'
 }
+
+export function convertDateFormat(date) {
+	let parts = date.split('-')
+	let newDate = `${parts[2]}/${parts[1]}/${parts[0]}`
+	return newDate
+}

@@ -25,6 +25,28 @@ main#detail {
 		header {
 			margin-top: 50px;
 		}
+		#filters {
+			ul.search_whisperer {
+				position: absolute;
+				z-index: 1;
+				max-height: 150px;
+				width: 76%;
+				left: 13%;
+				top: 30px;
+				background-color: $green;
+				color: $back;
+				border-bottom: 5px solid $back;
+				list-style: none;
+				padding: 0;
+				overflow-y: auto;
+				box-sizing: border-box;
+				li.whisper {
+					padding: 5px 0;
+					border-bottom: 1px solid $back;
+					cursor: pointer;
+				}
+			}
+		}
 	}
 
 	#center {
@@ -177,7 +199,14 @@ main#detail {
 #loading {
 	text-align: center;
 	padding-top: 300px;
+	color: $back;
 	i.fa {
 		font-size: 150px;
 	}
+}
+
+#no_flights {
+	text-align: center;
+	padding-top: 300px;
+	font-size: 30px;
 }

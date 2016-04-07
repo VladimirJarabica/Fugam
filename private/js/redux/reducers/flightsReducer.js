@@ -5,7 +5,6 @@ export default (flights = {
 	let newFlights = {};
 	switch(action.type) {
 		case 'RECEIVE_FLIGHTS':
-			console.log('RECEIVE_FLIGHTS')
 			newFlights.data = action.flights
 			newFlights.filters = action.filters
 			return newFlights

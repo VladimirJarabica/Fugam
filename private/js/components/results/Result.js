@@ -18,7 +18,6 @@ class Result extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		console.log('componentWillReceiveProps', nextProps)
 		this.setState({
 			addInfo: nextProps.addInfo
 		})

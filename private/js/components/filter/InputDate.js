@@ -1,15 +1,17 @@
 import React, { Component } from 'react'
 
+import * as timeUtils from '../../utils/timeUtils'
+
 class InputDate extends Component {
 
   handleChange(e) {
-    this.props.setValue(this.props.name, e.target.value)
+    this.props.setValue(this.props.name, e.target.value, timeUtils.convertDateFormat(e.target.value))
   }
 
   render() {
     return (
       <div className="col col-xs-12">
-      	<input onChange={this.handleChange.bind(this)} value={this.props.value} type="text" name={this.props.name} placeholder={this.props.placeholder} />
+      	<input onChange={this.handleChange.bind(this)} value={this.props.value} type="date" name={this.props.name} placeholder={this.props.placeholder} />
       </div>
     )
   }

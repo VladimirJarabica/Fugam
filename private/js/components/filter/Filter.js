@@ -12,11 +12,15 @@ class Filter extends Component {
     this.state = {
       filterValues: {
         flyFrom: '',
+        flyFromValue: '',
         to: '',
+        toValue: '',
         dateFrom: null,
-        dateTo: null,
+        dateToValue: null,
         returnFrom: null,
-        returnTo: null
+        returnFromValue: null,
+        returnTo: null,
+        returnToValue: null
       },
       returnFlight: false
     }
@@ -28,9 +32,10 @@ class Filter extends Component {
 
   }
 
-  setFilterValue(name, value) {
+  setFilterValue(name, displayValue, searchValue) {
     let filterValues = this.state.filterValues
-    filterValues[name] = value
+    filterValues[`${name}Value`] = displayValue
+    filterValues[name] = searchValue
     this.setState({
       filterValues
     })
@@ -53,10 +58,6 @@ class Filter extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log(this.state.filterValues)
-    /*let query = `https://api.skypicker.com/flights?v=2&locale=en&flyFrom=${this.state.filterValues.flyFrom}&to=${this.state.filterValues.to}&dateFrom=${this.state.filterValues.dateFrom}&dateTo=${this.state.filterValues.dateTo}`
-    if(this.state.returnFlight)
-      query += `&typeFlight=return&returnFrom=${this.state.filterValues.returnFrom}&returnTo=${this.state.filterValues.returnTo}`*/
     this.props.actions.getFlights(this.state.filterValues)
 
   }
@@ -80,8 +81,8 @@ class Filter extends Component {
         <div>
           <div id="return_flight" className="clearfix">
             <p>Return flight</p>
-            <InputDate name="returnFrom" value={self.state.filterValues.returnFrom} setValue={self.setFilterValue} placeholder="Date from" />
-            <InputDate name="returnTo" value={self.state.filterValues.returnTo} setValue={self.setFilterValue} placeholder="Date to" />
+            <InputDate name="returnFrom" value={self.state.filterValues.returnFromValue} setValue={self.setFilterValue} placeholder="Date from" />
+            <InputDate name="returnTo" value={self.state.filterValues.returnToValue} setValue={self.setFilterValue} placeholder="Date to" />
           </div>
           <div id="remove_return_wrapper">
             <div className="col col-xs-12">
@@ -97,10 +98,10 @@ class Filter extends Component {
         </header>
         <form id="filters" onSubmit={self.handleSubmit}>
           <div id="directflight_filters" className="clearfix">
-            <InputPlace name="flyFrom" value={self.state.filterValues.flyFrom} setValue={self.setFilterValue} placeholder="Departure" />
-            <InputPlace name="to" value={self.state.filterValues.to} setValue={self.setFilterValue} placeholder="Arrival" />
-            <InputDate name="dateFrom" value={self.state.filterValues.dateFrom} setValue={self.setFilterValue} placeholder="Date from" />
-            <InputDate name="dateTo" value={self.state.filterValues.dateTo} setValue={self.setFilterValue} placeholder="Date to" />
+            <InputPlace name="flyFrom" value={self.state.filterValues.flyFromValue} setValue={self.setFilterValue} placeholder="Departure" />
+            <InputPlace name="to" value={self.state.filterValues.toValue} setValue={self.setFilterValue} placeholder="Arrival" />
+            <InputDate name="dateFrom" value={self.state.filterValues.dateFromValue} setValue={self.setFilterValue} placeholder="Date from" />
+            <InputDate name="dateTo" value={self.state.filterValues.dateToValue} setValue={self.setFilterValue} placeholder="Date to" />
           </div>
           {returnFlight}
           <div id="search_wrapper">

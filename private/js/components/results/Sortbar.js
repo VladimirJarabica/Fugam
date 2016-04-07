@@ -3,8 +3,6 @@ import React, { Component } from 'react'
 class Sortbas extends Component {
 
   handleSort(type) {
-    console.log('sort by', type)
-    console.log(this.props.filters)
     let filters = Object.assign({}, this.props.filters, { sort: type })
     this.props.actions.getFlights(filters)
   }

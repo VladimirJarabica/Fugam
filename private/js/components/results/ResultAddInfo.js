@@ -6,7 +6,6 @@ class ResultAddInfo extends Component {
 
   render() {
     let self = this
-    console.log('render ResultAddInfo');
     return (
       <div className="result_add clearfix">
         <div className="route_there">
