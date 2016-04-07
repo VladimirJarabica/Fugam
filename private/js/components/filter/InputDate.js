@@ -11,7 +11,7 @@ class InputDate extends Component {
   render() {
     return (
       <div className="col col-xs-12">
-      	<input onChange={this.handleChange.bind(this)} value={this.props.value} type="date" name={this.props.name} placeholder={this.props.placeholder} />
+      	<input min={this.props.min} max={this.props.max} onChange={this.handleChange.bind(this)} value={this.props.value} type="date" name={this.props.name} placeholder={this.props.placeholder} />
       </div>
     )
   }

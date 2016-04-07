@@ -22451,6 +22451,8 @@
 	    value: function render() {
 	      var self = this;
 
+	      var today = new Date().toISOString().slice(0, 10);
+
 	      var returnFlight = null;
 	      if (!self.state.returnFlight) {
 	        var _React$createElement;
@@ -22486,8 +22488,8 @@
 	              null,
 	              'Return flight'
 	            ),
-	            _react2.default.createElement(_InputDate2.default, { name: 'returnFrom', value: self.state.filterValues.returnFromValue, setValue: self.setFilterValue, placeholder: 'Date from' }),
-	            _react2.default.createElement(_InputDate2.default, { name: 'returnTo', value: self.state.filterValues.returnToValue, setValue: self.setFilterValue, placeholder: 'Date to' })
+	            _react2.default.createElement(_InputDate2.default, { name: 'returnFrom', value: self.state.filterValues.returnFromValue, setValue: self.setFilterValue, placeholder: 'Date from', min: this.state.filterValues.dateToValue ? this.state.filterValues.dateToValue : today, max: this.state.filterValues.returnToValue ? this.state.filterValues.returnToValue : '' }),
+	            _react2.default.createElement(_InputDate2.default, { name: 'returnTo', value: self.state.filterValues.returnToValue, setValue: self.setFilterValue, placeholder: 'Date to', min: this.state.filterValues.returnFromValue ? this.state.filterValues.returnFromValue : today, max: '' })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -22524,8 +22526,8 @@
 	            { id: 'directflight_filters', className: 'clearfix' },
 	            _react2.default.createElement(_InputPlace2.default, { name: 'flyFrom', value: self.state.filterValues.flyFromValue, setValue: self.setFilterValue, placeholder: 'Departure' }),
 	            _react2.default.createElement(_InputPlace2.default, { name: 'to', value: self.state.filterValues.toValue, setValue: self.setFilterValue, placeholder: 'Arrival' }),
-	            _react2.default.createElement(_InputDate2.default, { name: 'dateFrom', value: self.state.filterValues.dateFromValue, setValue: self.setFilterValue, placeholder: 'Date from' }),
-	            _react2.default.createElement(_InputDate2.default, { name: 'dateTo', value: self.state.filterValues.dateToValue, setValue: self.setFilterValue, placeholder: 'Date to' })
+	            _react2.default.createElement(_InputDate2.default, { name: 'dateFrom', value: self.state.filterValues.dateFromValue, setValue: self.setFilterValue, placeholder: 'Date from', min: today, max: this.state.filterValues.dateToValue ? this.state.filterValues.dateToValue : '' }),
+	            _react2.default.createElement(_InputDate2.default, { name: 'dateTo', value: self.state.filterValues.dateToValue, setValue: self.setFilterValue, placeholder: 'Date to', min: this.state.filterValues.dateFromValue ? this.state.filterValues.dateFromValue : today, max: this.state.filterValues.returnFromValue ? this.state.filterValues.returnFromValue : '' })
 	          ),
 	          returnFlight,
 	          _react2.default.createElement(
@@ -22720,7 +22722,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'col col-xs-12' },
-	        _react2.default.createElement('input', { onChange: this.handleChange.bind(this), value: this.props.value, type: 'date', name: this.props.name, placeholder: this.props.placeholder })
+	        _react2.default.createElement('input', { min: this.props.min, max: this.props.max, onChange: this.handleChange.bind(this), value: this.props.value, type: 'date', name: this.props.name, placeholder: this.props.placeholder })
 	      );
 	    }
 	  }]);

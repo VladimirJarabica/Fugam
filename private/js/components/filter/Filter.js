@@ -65,6 +65,8 @@ class Filter extends Component {
   render() {
     let self = this;
 
+    let today = (new Date()).toISOString().slice(0, 10)
+
     let returnFlight = null;
     if(!self.state.returnFlight) {
       returnFlight = (
@@ -81,8 +83,8 @@ class Filter extends Component {
         <div>
           <div id="return_flight" className="clearfix">
             <p>Return flight</p>
-            <InputDate name="returnFrom" value={self.state.filterValues.returnFromValue} setValue={self.setFilterValue} placeholder="Date from" />
-            <InputDate name="returnTo" value={self.state.filterValues.returnToValue} setValue={self.setFilterValue} placeholder="Date to" />
+            <InputDate name="returnFrom" value={self.state.filterValues.returnFromValue} setValue={self.setFilterValue} placeholder="Date from"  min={this.state.filterValues.dateToValue ? this.state.filterValues.dateToValue : today} max={this.state.filterValues.returnToValue ? this.state.filterValues.returnToValue : ''} />
+            <InputDate name="returnTo" value={self.state.filterValues.returnToValue} setValue={self.setFilterValue} placeholder="Date to" min={this.state.filterValues.returnFromValue ? this.state.filterValues.returnFromValue : today} max={''} />
           </div>
           <div id="remove_return_wrapper">
             <div className="col col-xs-12">
@@ -100,8 +102,8 @@ class Filter extends Component {
           <div id="directflight_filters" className="clearfix">
             <InputPlace name="flyFrom" value={self.state.filterValues.flyFromValue} setValue={self.setFilterValue} placeholder="Departure" />
             <InputPlace name="to" value={self.state.filterValues.toValue} setValue={self.setFilterValue} placeholder="Arrival" />
-            <InputDate name="dateFrom" value={self.state.filterValues.dateFromValue} setValue={self.setFilterValue} placeholder="Date from" />
-            <InputDate name="dateTo" value={self.state.filterValues.dateToValue} setValue={self.setFilterValue} placeholder="Date to" />
+            <InputDate name="dateFrom" value={self.state.filterValues.dateFromValue} setValue={self.setFilterValue} placeholder="Date from" min={today} max={this.state.filterValues.dateToValue ? this.state.filterValues.dateToValue : ''} />
+            <InputDate name="dateTo" value={self.state.filterValues.dateToValue} setValue={self.setFilterValue} placeholder="Date to" min={this.state.filterValues.dateFromValue ? this.state.filterValues.dateFromValue : today} max={this.state.filterValues.returnFromValue ? this.state.filterValues.returnFromValue : ''} />
           </div>
           {returnFlight}
           <div id="search_wrapper">
